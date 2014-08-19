@@ -1,5 +1,6 @@
-def sum(array)
-	return 0 if array.empty?
+def sum(array, dupped = [])
+	dupped = array.dup
+	return 0 if dupped.empty?
 	return array[0] if array.count == 1
-	array.pop + sum(array)
+	dupped.pop + sum(dupped)
 end
